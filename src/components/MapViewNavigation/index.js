@@ -1,7 +1,7 @@
 /**
  * @imports
  */
-import Geolocation from '@react-native-community/geolocation';
+import geolocation from '@react-native-community/geolocation';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {CoordinatePropType} from '../../constants/PropTypes';
@@ -129,7 +129,7 @@ export default class MapViewNavigation extends Component {
      */
     componentDidMount()
     {
-        this.watchId = Geolocation.watchPosition(position => {
+        this.watchId = geolocation.watchPosition(position => {
 
             this.setPosition(position.coords);
 
@@ -141,7 +141,7 @@ export default class MapViewNavigation extends Component {
      */
     componentWillUnmount()
     {
-        Geolocation.clearWatch(this.watchId);
+        geolocation.clearWatch(this.watchId);
     }
 
     /**
